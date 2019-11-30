@@ -8,6 +8,8 @@ namespace FolderFileCreator
 {
     class FolderCreator
     {
+        string pathString = "";
+        String subFolder = "";
         bool directoryExist = false;
         string topLevelFolderName = "";
         string userCreateFolderChoice = "";
@@ -22,13 +24,17 @@ namespace FolderFileCreator
                 changeFolderCurrentLocation();
                 if (tryAgain == "1")
                 {
-                    createFolderUnderTopLevel();
+                    createFolderUnderTopLevel(subFolder,pathString);
+                    createDirectory(pathString);
+                    askUserIfTheyWantToCreateANewFile();
                 }
             }
             else
             {
                 topLevelFolderName = System.AppDomain.CurrentDomain.BaseDirectory;
-                createFolderUnderTopLevel();
+                createFolderUnderTopLevel(subFolder,pathString);
+                createDirectory(pathString);
+                askUserIfTheyWantToCreateANewFile();
             }
         }
         private void changeFolderCurrentLocation()
@@ -54,17 +60,30 @@ namespace FolderFileCreator
             } while (directoryExist == false);
             // check to see if folder exists
         }
-        private void createFolderUnderTopLevel()
+        public void createFolderUnderTopLevel(String subFolder,String pathString)
         {
-            String subFolder = "";
             Console.WriteLine("\t\nPlease enter name of sub folder: ");
             subFolder = Console.ReadLine();
 
             // To create a string that specifies the path to a subfolder under your 
             // top-level folder, add a name for the subfolder to folderName.
-            string pathString = System.IO.Path.Combine(topLevelFolderName, subFolder);
-
+            pathString = System.IO.Path.Combine(topLevelFolderName, subFolder);
+        }
+        private void createDirectory(String pathString)
+        {
             System.IO.Directory.CreateDirectory(pathString);
+        }
+        private void askUserIfTheyWantToCreateANewFile()
+        {
+            string userChoice = "";
+            Console.Clear();
+            Console.WriteLine("\t\nCongrats you have now just created a new sub folder called: " + subFolder + "\t\nWould you like to create a new file under this folder?\t\n1: For Yes\t\n2: For No");
+            userChoice = Console.ReadLine();
+            if(userChoice == "1")
+            {
+                FileCreator fileCreator = new FileCreator();
+                fileCreator.createNewFileWhenNewFolderCreated(pathString);
+            }
         }
     }
 }

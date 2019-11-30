@@ -20,7 +20,8 @@ namespace FolderFileCreator
                     folderCreator.createFolder();
                 }else if(userChoice == "2")
                 {
-
+                    FileCreator fileCreator = new FileCreator();
+                    fileCreator.createAFileInsideAFolder();
                 }else if(userChoice == "3")
                 {
 
