@@ -24,16 +24,16 @@ namespace FolderFileCreator
                 changeFolderCurrentLocation();
                 if (tryAgain == "1")
                 {
-                    createFolderUnderTopLevel(subFolder,pathString);
-                    createDirectory(pathString);
+                    createFolderUnderTopLevel();
+                    createDirectory();
                     askUserIfTheyWantToCreateANewFile();
                 }
             }
             else
             {
                 topLevelFolderName = System.AppDomain.CurrentDomain.BaseDirectory;
-                createFolderUnderTopLevel(subFolder,pathString);
-                createDirectory(pathString);
+                createFolderUnderTopLevel();
+                createDirectory();
                 askUserIfTheyWantToCreateANewFile();
             }
         }
@@ -60,7 +60,7 @@ namespace FolderFileCreator
             } while (directoryExist == false);
             // check to see if folder exists
         }
-        public void createFolderUnderTopLevel(String subFolder,String pathString)
+        public void createFolderUnderTopLevel()
         {
             Console.WriteLine("\t\nPlease enter name of sub folder: ");
             subFolder = Console.ReadLine();
@@ -69,7 +69,7 @@ namespace FolderFileCreator
             // top-level folder, add a name for the subfolder to folderName.
             pathString = System.IO.Path.Combine(topLevelFolderName, subFolder);
         }
-        private void createDirectory(String pathString)
+        private void createDirectory()
         {
             System.IO.Directory.CreateDirectory(pathString);
         }
