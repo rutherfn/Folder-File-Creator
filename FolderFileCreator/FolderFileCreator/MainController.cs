@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace FolderFileCreator
@@ -13,7 +14,7 @@ namespace FolderFileCreator
             string userChoice = "1";
             do
             { // ask the user for the choice.
-                Console.WriteLine("\t\nSo what would you like to do?\t\n1: Create A Folder\t\n2: Create A File\t\n3: Delete A Folder Or File.\t\n4: Leave Program!");
+                Console.WriteLine("\t\nSo what would you like to do?\t\n1: Create A Folder\t\n2: Create A File Inside A Folder\t\n3: Delete A Folder\t\n4: Leave Program!");
                 userChoice = Console.ReadLine();
                 if (userChoice == "1")
                 { // if user selects 1, call create folder method
@@ -25,10 +26,10 @@ namespace FolderFileCreator
                     fileCreator.createAFileInsideAFolder();
                 }else if(userChoice == "3")
                 {
-                    RemoveFolderOrFile removeFolderOrFile = new RemoveFolderOrFile();
+                    RemoveFolder removeFolderOrFile = new RemoveFolder();
                     removeFolderOrFile.remove();
                 }
-                else
+                else if(userChoice != "4")
                 {
                     Console.Clear();
                     Console.WriteLine("\t\nNot a valid entry, please try again:");

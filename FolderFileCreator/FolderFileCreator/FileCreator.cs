@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace FolderFileCreator
@@ -8,6 +9,8 @@ namespace FolderFileCreator
     {
         String fileName = "";
         String topLevelFolderName = "";
+        String tryAgain = "";
+        bool directoryExist;
         public void createNewFileWhenNewFolderCreated(String pathString)
         {
             Console.Clear();
@@ -20,9 +23,26 @@ namespace FolderFileCreator
         public void createAFileInsideAFolder()
         {
             Console.Clear();
-            Console.WriteLine("\t\nPlease give me the full path of your new parent folder location.");
-            topLevelFolderName = Console.ReadLine();
-            createNewFileWhenNewFolderCreated(topLevelFolderName);
+            do
+            {
+                Console.WriteLine("\t\nPlease give me the full path of a existing folder location.");
+                topLevelFolderName = Console.ReadLine();
+                if (Directory.Exists(topLevelFolderName))
+                {
+                    directoryExist = true;
+                    tryAgain = "1";
+                    createNewFileWhenNewFolderCreated(topLevelFolderName);
+                }
+                else
+                {
+                    Console.WriteLine("\t\nDirectory does not exist will you like to try again?\t\n1:Yes\t\n2:No");
+                    tryAgain = Console.ReadLine();
+                    if (tryAgain == "2")
+                    {
+                        directoryExist = true;
+                    }
+                }
+            } while (directoryExist == false);
         }
         private void createActualFile(String pathString, String fileName)
         {

@@ -6,54 +6,20 @@ using System.Collections;
 
 namespace FolderFileCreator
 {
-    class RemoveFolderOrFile
+    class RemoveFolder
     {
-        string userChoice = "";
         string folderWishingToRemove = "";
-        string fileWishingToRemove = "";
         public void remove()
         {
-            Console.WriteLine("Will you like to remove a File Or Filder?\t\n1: File\t\n2: Folder");
-            userChoice = Console.ReadLine();
-            if(userChoice == "1")
-            {
-                removeFile();
-            }else if(userChoice == "2")
-            {
                 removeFolder();
-            }
         }
-        private void removeFile()
-        {
-            inputingFoldingWishingToRemove();
-            inputingFileWishingToRemove();
-            try
-            {
-                if (File.Exists(Path.Combine(folderWishingToRemove, fileWishingToRemove)))
-                {
-                    File.Delete(Path.Combine(folderWishingToRemove, fileWishingToRemove));
-                    Console.WriteLine("File deleted.");
-                }
-                else
-                {
-                    Console.WriteLine("File Not Found");
-                }
-
-                }catch(IOException ioexp)
-            {
-                Console.WriteLine(ioexp.Message);
-            }
-        }
+      
         private void inputingFoldingWishingToRemove()
         {
             Console.WriteLine("Please enter the folder name you wish to remove ");
             folderWishingToRemove = Console.ReadLine();
         }
-        private void inputingFileWishingToRemove()
-        {
-            Console.WriteLine("Please enter the file name you wish to remove with the extension!");
-            folderWishingToRemove = Console.ReadLine();
-        }
+    
        
         private void setAttributesNormal(DirectoryInfo dir)
         {
