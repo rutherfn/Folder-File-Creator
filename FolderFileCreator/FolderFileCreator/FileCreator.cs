@@ -41,22 +41,6 @@ namespace FolderFileCreator
                 Console.WriteLine("File \"{0}\" already exists.", fileName);
                 return;
             }
-
-            // Read and display the data from your file.
-            //    try
-            //   {
-            //      byte[] readBuffer = System.IO.File.ReadAllBytes(pathString);
-            //      foreach (byte b in readBuffer)
-            //     {
-            //        Console.Write(b + " ");
-            //   }
-            //  Console.WriteLine();
-            // }
-            //  catch (System.IO.IOException e)
-            //  {
-            //     Console.WriteLine(e.Message);
-            // }
-            //}
         }
     }
 }
