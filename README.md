@@ -29,7 +29,7 @@ Down below are all of the classes defined in `FolderFileCreator` and what they a
 
 - `FileCreator`: Ask's the user if they want to create a file, will create the file under the any directory. 
 
-- `FoldeCreator`: Creates a folder if the user doesn't have one created. 
+- `FolderCreator`: Creates a folder if the user doesn't have one created. 
 
 - `RemoveFolder`: Removes a desired folder if the user wants to remove a folder previously created
 
