@@ -3,7 +3,7 @@
 The is the Folder File Creator a console app that creates a file or folder directory in any location on your computer.
 
 ### Prerequisites
-Be sure to run `git clone https://github.com/rutherfn/Folder-File-Creator.git`, on the given repo. From there, you will be able to check out the master branch to get up to date version of features!
+Be sure to run `git clone https://github.com/rutherfn/Folder-File-Creator.git`, on the given repo. From there, you will be able to check out the master branch to get the up to date version of features!
 
 ## Getting Started / Running The Project 
 
@@ -17,7 +17,7 @@ The app will build and run the console application.
 
 ## Core Project 
 
-`FolderFileCreator` contains folder stucture and classes to get you started. Down below I will explain each what each class does; in a short description. 
+`FolderFileCreator` contains folder stucture and classes to get you started.
 
 ## Classes
 
@@ -25,7 +25,7 @@ Down below are all of the classes defined in `FolderFileCreator` and what they a
 
 - `Program`: Responsible for calling the `controlProgram` method in the `MainController` class. 
 
-- `MainController`: Controls the whole program by running a do while method, to call the creation classes. 
+- `MainController`: Controls the whole program by running a do while method, to call the created classes. 
 
 - `FileCreator`: Ask's the user if they want to create a file, will create the file under the any directory. 
 
