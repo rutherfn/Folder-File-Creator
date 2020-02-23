@@ -35,4 +35,4 @@ Down below are all of the classes defined in `FolderFileCreator` and what they a
 
 ## Project Status
 
-:white_check_mark: Complete    
+:white_check_mark: Completed
