@@ -33,4 +33,6 @@ Down below are all of the classes defined in `FolderFileCreator` and what they a
 
 - `RemoveFolder`: Removes a desired folder if the user wants to remove a folder previously created.
 
-## Project Status: + text in green
+## Project Status
+
+:white_check_mark: Complete    
